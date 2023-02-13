@@ -46,27 +46,73 @@
     height: 650px;
     padding-top: 40px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
 .div1, .div2, .div3, .div4{
-    background-color: red;
+    border: 1px transparent;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 .div1 { 
     grid-area: 1 / 2 / 4 / 3;
+    /* temporal */
+}
+.div1 .img-discover-container{
+    background-image: url('../img/discover/farming-big.webp');
+    background-size: cover;
+    background-position: center;
+    height: 50%;
+}
+.div1 .text-discover-container{
+    padding: 40px 30px;
+    border-radius: 5px;
+    border: 1px transparent;
+    height: 50%;
+    background-color: #2C1854;
 }
 .div2 { 
-    grid-area: 1 / 1 / 2 / 2; 
+    grid-area: 1 / 1 / 2 / 2;
+    background: radial-gradient(39.15% 59.64% at 50% 50%, rgba(110, 245, 220, 0) 10.09%, rgba(110, 245, 220, 0.5) 100%), url('../img/discover/farming-thumbnail.webp');
+    background-position: center;
+    background-size: cover;
 }
 .div3 { 
-    grid-area: 2 / 1 / 3 / 2; 
+    grid-area: 2 / 1 / 3 / 2;
+    background-image: url('../img/discover/door-thumbnail.webp');
 }
 .div4 { 
-    grid-area: 3 / 1 / 4 / 2; 
+    grid-area: 3 / 1 / 4 / 2;
+    background-image: url('../img/discover/city-thumbnail.webp');
 }
-
+.gallery-lock{
+    background-color: #000000b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.vertical-text{
+    position: absolute;
+    left: 0;
+    margin-left: 5px;
+    padding-bottom: 15px;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    text-align: end;
+    z-index: 10;
+}
+.selected-div{
+    border: 2px solid #6EF5DC;
+}
 @media (max-width: 768px) {
     .white-line, .green-line{
         display: none;
@@ -85,15 +131,24 @@
     }
     .gallery-container {
         display: grid;
-        height: 80vh;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 2fr 1fr;
+        height: fit-content;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr repeat(2, 1fr);
         grid-column-gap: 10px;
         grid-row-gap: 10px;
     }
-    
-    .div1 { grid-area: 1 / 1 / 2 / 4; }
-    .div2 { grid-area: 2 / 1 / 3 / 2; }
-    .div3 { grid-area: 2 / 2 / 3 / 3; }
-    .div4 { grid-area: 2 / 3 / 3 / 4; }
+    .vertical-text{
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+    }
+    .div1 { 
+        grid-area: 2 / 1 / 3 / 2; 
+        height: fit-content;
+    }
+    .div1 .text-discover-container{
+        padding: 20px 20px;
+    }
+    .div2 { grid-area: 1 / 1 / 2 / 2; }
+    .div3 { grid-area: 3 / 1 / 4 / 2; }
+    .div4 { grid-area: 4 / 1 / 5 / 2; }
 }
