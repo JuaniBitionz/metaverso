@@ -110,8 +110,25 @@
     text-align: end;
     z-index: 10;
 }
+.lock-svg{
+    transition-duration: .3s;
+}
+.thumbnail-div{
+    transition-duration: .3s;
+    border: 2px solid transparent;
+}
+.thumbnail-div:hover{
+    cursor: pointer;
+    border: 2px solid #FFF;
+}
+.thumbnail-div:hover .lock-svg{
+    scale: calc(1.2);
+}
 .selected-div{
     border: 2px solid #6EF5DC;
+}
+.test-class{
+    border: 10px solid red !important;
 }
 @media (max-width: 768px) {
     .white-line, .green-line{

@@ -369,3 +369,9 @@ $("#imggod").click(function () {
 
 });
 
+$("#farmingSingleThumbnail").click(function () {
+    $("#bigDiv").addClass("test-class");
+    setTimeout(()=> {
+        $("#bigDiv").removeClass("test-class")
+    }, 3000)
+})
