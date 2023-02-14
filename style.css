@@ -3134,17 +3134,17 @@ Cursor
 }
 
 .carousel .background.a {
-  background-image: url("img/slider/slider-1.png");
+  background-image: url("img/slider/slider-1.webp");
   background-size: cover;
   background-position: center;
 }
 
 .carousel .background.b {
-  background-image:  url("img/slider/slider-3.png");
+  background-image:  url("img/slider/slider-3.webp");
 }
 
 .carousel .background.c {
-  background-image: url("img/slider/slider-2.png");
+  background-image: url("img/slider/slider-2.webp");
 }
 
 .carousel-fade .carousel-inner .item {
