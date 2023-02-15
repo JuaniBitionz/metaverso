@@ -369,9 +369,91 @@ $("#imggod").click(function () {
 
 });
 
+const discoverInfo = [
+    {
+        id: 'farmingSingleThumbnail',
+        title: 'FARMING SINGLE',
+        content: "After a lot of effort and dedication, we have finally reached the testing phase of our metaverse. In this opportunity, we present you a demo version of our farming game, a single player experience. You will be able to try the basic mechanics of the game, explore a dark forest and face the dangers you will meet along the way, while you discover the secrets of this world. We hope you enjoy it and give us feedback on what you liked and what you didn't, in order to continue improving and developing Cripto Country for you.",
+        img: "./img/discover/farming-big.webp",
+        buttonText: "soon available for download",
+        buttonEnable: true,
+        buttonLink: '',
+    },
+    {
+        id: 'btcCityThumbnail',
+        title: 'BITCOIN CITY',
+        content: "Bitcoin City is the first city created in the Crypto Country continent, based on a story where the main character is Satoshi Nakamoto. We invite you to get to know a little about her, we hope you enjoy it. <br><br> Minimun Requirements <br><br> <ul style='list-style: none'><li>AMD Ryzen 5 / INTEL i5 processor</li><li>NVIDIA GEFORCE RTX 2080</li><li>16 GB RAM</li><ul/>",
+        img: "./img/discover/city-big.webp",
+        buttonText: "download",
+        buttonEnable: false,
+        buttonLink: "https://drive.google.com/file/d/1rQUiEZjxHU4HYATyiQYX-CCdYHVFx7HH/view?usp=sharing",
+    },
+]
+
 $("#farmingSingleThumbnail").click(function () {
-    $("#bigDiv").addClass("test-class");
-    setTimeout(()=> {
-        $("#bigDiv").removeClass("test-class")
-    }, 3000)
+    $("#farmingSingleThumbnail").addClass("selected-div");
+    $("#farmingSingleThumbnail").css('background', "radial-gradient(39.15% 59.64% at 50% 50%, rgba(110, 245, 220, 0) 10.94%, rgba(110, 245, 220, 0.5) 100%), url('./img/discover/farming-thumbnail.webp')");
+    $("#farmingSingleThumbnail").css('background-size', 'cover');
+
+    $("#btcCityThumbnail").removeClass("selected-div");
+    $("#btcCityThumbnail").css('background', "url('./img/discover/city-thumbnail.webp')");
+    $("#btcCityThumbnail").css('background-size', "cover");
+    $("#btcCityThumbnail").css('background-position', "center");
+
+    // if($(window).width() <= 768){
+    //     // do your stuff
+    //     $("#galleryContainer").css('grid-template-rows', '1fr 4fr repeat(2, 1fr)');
+    //     $("#bigDiv").css('grid-area', '2 / 1 / 3 / 2');
+    //     $("#farmingSingleThumbnail").css('grid-area', '1 / 1 / 2 / 2');
+    //     $("#btcCityThumbnail").css('grid-area', '3 / 1 / 4 / 2');
+    //     $("#doorThumbnail").css('grid-area', '4 / 1 / 5 / 2');
+    // }
+    setBigDiv(discoverInfo.find(replace => replace.id === 'farmingSingleThumbnail'));
 })
+$("#btcCityThumbnail").click(function () {
+    $("#btcCityThumbnail").addClass("selected-div");
+    $("#btcCityThumbnail").css('background', "radial-gradient(39.15% 59.64% at 50% 50%, rgba(110, 245, 220, 0) 10.94%, rgba(110, 245, 220, 0.5) 100%), url('./img/discover/city-thumbnail.webp')");
+    $("#btcCityThumbnail").css('background-size', 'cover');
+    $("#btcCityThumbnail").addClass('div3-active', 'cover');
+
+    $("#farmingSingleThumbnail").removeClass("selected-div");
+    $("#farmingSingleThumbnail").css('background', "url('./img/discover/farming-thumbnail.webp')");
+    $("#farmingSingleThumbnail").css('background-size', "cover");
+    $("#farmingSingleThumbnail").css('background-position', "center");
+
+    // if($(window).width() <= 768){
+    //     // do your stuff
+    //     $("#galleryContainer").css('grid-template-rows', 'repeat(2, 1fr) 4fr 1fr');
+    //     $("#bigDiv").css('grid-area', '3 / 1 / 4 / 2');
+    //     $("#farmingSingleThumbnail").css('grid-area', '1 / 1 / 2 / 2');
+    //     $("#btcCityThumbnail").css('grid-area', '2 / 1 / 3 / 2');
+    //     $("#doorThumbnail").css('grid-area', '4 / 1 / 5 / 2');
+    // }
+
+    setBigDiv(discoverInfo.find(replace => replace.id === 'btcCityThumbnail'));
+})
+
+const setBigDiv = function(replace){
+    // ./img/discover/farming-big.webp
+    $("#discoverBigImg").css('background', `url(${replace.img})`);
+    $("#discoverBigImg").css('background-size', 'cover');
+    $("#discoverBigImg").css('background-position', 'center');
+    $("#discoverBigImg").addClass('scale-up-center');
+    setTimeout(()=>{
+        $("#discoverBigImg").removeClass('scale-up-center');
+    }, 400)
+
+    $("#discoverTitle").text(replace.title);
+    $("#discoverContent").html(replace.content);
+    $("#discoverDownloadButton").text(replace.buttonText);
+    $("#discoverDownloadButton").prop('disabled', replace.buttonEnable);
+    $("#discoverDownloadButton").prop('href', replace.buttonLink);
+
+    if($(window).width() <= 768){
+        $('html, body').animate({
+            scrollTop: $("#discoverSection").offset().top
+        }, 500);
+    }
+
+    
+}   
