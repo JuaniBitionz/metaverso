@@ -1,27 +1,23 @@
 @-webkit-keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+        opacity: 0;
     }
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        opacity: 100%;
     }
   }
   @keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+        opacity: 0;
     }
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        opacity: 100%;
     }
 }
 
 .scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	-webkit-animation: scale-up-center .8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center .8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .top-area{
@@ -102,6 +98,7 @@
     border: 1px transparent;
     height: fit-content;
     background-color: #2C1854;
+    transition-duration: .3s;
 }
 .div2 { 
     grid-area: 1 / 1 / 2 / 2;

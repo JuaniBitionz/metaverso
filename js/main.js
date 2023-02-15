@@ -446,7 +446,7 @@ const setBigDiv = function(replace){
     $("#discoverContent").html(replace.content);
     $("#discoverDownloadButton").text(replace.buttonText);
     $("#discoverDownloadButton").prop('disabled', replace.buttonEnable);
-    $("#discoverDownloadButton").prop('href', replace.buttonLink);
+    $("#discoverDownloadLink").prop('href', replace.buttonLink);
 
     if($(window).width() <= 768){
         $('html, body').animate({
