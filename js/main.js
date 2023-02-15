@@ -414,7 +414,6 @@ $("#btcCityThumbnail").click(function () {
     $("#btcCityThumbnail").addClass("selected-div");
     $("#btcCityThumbnail").css('background', "radial-gradient(39.15% 59.64% at 50% 50%, rgba(110, 245, 220, 0) 10.94%, rgba(110, 245, 220, 0.5) 100%), url('./img/discover/city-thumbnail.webp')");
     $("#btcCityThumbnail").css('background-size', 'cover');
-    $("#btcCityThumbnail").addClass('div3-active', 'cover');
 
     $("#farmingSingleThumbnail").removeClass("selected-div");
     $("#farmingSingleThumbnail").css('background', "url('./img/discover/farming-thumbnail.webp')");
