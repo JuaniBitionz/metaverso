@@ -170,6 +170,7 @@
     border: 1px solid #ffffff00;
     padding: 5px 25px;
     text-transform: capitalize;
+    font-weight: 700 !important;
 }
 .download-button:disabled{
     background: gray;
